@@ -21,14 +21,17 @@ public class CodingChallenge1 {
 //                System.out.println(num);
                 sb.append((char) ('a' + num - 1));
                 i += 3;
-            } else {
+            }
+            else if (i + 1 < s.length() && s.charAt(i + 1) == '#') {
+                int num = Integer.parseInt(s.substring(i, i + 1));
+                sb.append((char) ('a' + num - 1));
+                i += 2;
+            }
+            else {
                 int num = Integer.parseInt(s.substring(i, i + 1));
 //                System.out.println(num);
                 sb.append((char) ('a' + num - 1));
                 i++;
             }
         }
-
-        return sb.toString();
-    }
 }

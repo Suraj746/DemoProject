@@ -1,0 +1,62 @@
+/**
+ * 
+ */
+package InterviewQ;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+/**
+ * @author user
+ *
+ */
+public class StreamApis {
+
+	/**
+	 * @param args
+	 */
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//stream()
+		List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+		Stream<String> stream = names.stream();
+		System.out.println("Stream"+stream);
+		
+		//filter(Predicate<T> predicate)
+		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+		Stream<Integer>	evenNumbers = numbers.stream().filter(n -> n % 2 == 0);
+		System.out.println(evenNumbers);
+		
+		//map()
+		List<String> names1 = Arrays.asList("Alice", "Bob", "Charlie");
+		Stream<Integer> nameLengths = names1.stream().map(String::length);
+		List<Integer> lengths=names1.stream().map(String::length).collect(Collectors.toList());
+		System.out.println("NameLength"+ lengths);
+		
+		//forEach()
+		List<String> names2=Arrays.asList("Suraj","Pradhan","Mark","Pankaj");
+		names2.stream().forEach(System.out::println);
+		
+		//collect(Collection<T,A,R> collector)
+		List<String> names3=Arrays.asList("Suraj","Pradhan","Mark","Pankaj");
+		List<String> filteredNames=names3.stream().filter(n -> n.startsWith("P")).collect(Collectors.toList());
+		System.out.println("FilteredNames"+filteredNames);
+		
+		//reduce(identity,BinaryOperator<T> accumulate)
+		List<Integer> num=Arrays.asList(1,2,3,4,5,6);
+		int sum=num.stream().reduce(0,(a,b) -> a+b);
+		System.out.println("Sum of the numbers"+sum);
+		
+		
+
+	
+
+	}
+
+}

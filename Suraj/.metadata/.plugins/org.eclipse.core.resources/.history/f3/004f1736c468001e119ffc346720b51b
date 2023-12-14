@@ -1,0 +1,29 @@
+/**
+ * 
+ */
+package InterviewQ;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Stream;
+
+/**
+ * @author user
+ *
+ */
+public class StreamApis {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//stream()
+		List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+		Stream<String> stream = names.stream();
+		System.out.println("Stream"+stream);
+
+	}
+
+}
